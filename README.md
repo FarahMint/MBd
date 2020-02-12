@@ -1,69 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# MBd Movie catalogue
 
-## Available Scripts
+Web app created with:
+- React.js
+- React Context API for the state management
+- React-router
+- Data from MovieDB API  
+- LocalStorage
 
-In the project directory, you can run:
+## 🧐 What user can do?
+A user of 'Recipe Chef' can do the following:
+- [x] Browse the recent movies 
+- [x] Browse all the movies category available
+- [x] View all movies from a selected category
+- [x] View movie details
+- [x] Lookup a movie using text-based search
+- [x] Use MBd on their mobile device
 
-### `npm start`
 
-Runs the app in the development mode.<br />
+
+## 🧐 Work in progress
+- [x] Bookmark a selected movie
+- [x] Remove a selected movie from preious bookmark
+- [x] 404 page 
+- [x]sass for style
+- [x]test
+
+
+## `npm start`
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Screens Shot
 
-### `npm test`
+ 1. **`RECENT MOVIES LIST DISPLAY`**
+<img src="https://user-images.githubusercontent.com/18241226/74290345-7d55e300-4d29-11ea-953c-83c8cd20be03.png" alt="tablet-movieMBd" title="tablet-movieMBd"/> 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+ 2. **`NAVBAR DISPLAY MOBILE`** 
+ <img  align="left" src="https://user-images.githubusercontent.com/18241226/74290625-50ee9680-4d2a-11ea-937a-74285cec23ad.png" alt="mobile-MBd-nav" title="1mobile-MBd-nav"/>  
+       
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 3. **`MOVIE ITEM HOVER DISPLAY`**   
+ <img  align="left" src="https://user-images.githubusercontent.com/18241226/74290349-8050d380-4d29-11ea-95d6-9667ee4dbec6.png" alt="tablet-MBd-hover" title="1tablet-MBd-hover"/>             
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# MBd
+  4. **`SELECTED MOVIE DISPLAY DETAILS`**   
+ <img  align="left" src="https://user-images.githubusercontent.com/18241226/74290352-82b32d80-4d29-11ea-847b-6135158db007.png" alt="tablet-MBd-movie-details" title="1tablet-MBd-movie-details"/>       
+ 
