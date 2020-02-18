@@ -1,38 +1,40 @@
-import React from 'react';
+import React , {useContext} from 'react';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-
-
+import Routes from "./routes"
 import Header from"./components/Header";
-import Search from"./components/Search";
-import MoviesList from"./components/MoviesList";
-import CategoriesListMovies from"./components/CategoriesListMovies";
- import SelectedMovie from"./components/SelectedMovie";
+// import Search from"./components/Search";
+import Notification from"./components/Notification";
+
+/**IMPORT CONTEXT */
+import { MoviesContext } from "./store/movies";
 
 
 function App() {
+
+  const {state } = useContext(MoviesContext);
+
+  const {notif} = state;
+
+ 
+  let notificationMsg = (notif && notif.show === true) &&  <Notification 
+  status={notif.status}
+   text={notif.text}
+   
+  />
+  
   return (
     <div className="App">
-      <Router>
+
       <Header/>
-      <Search />
-
-        <Switch>
-          <Route exact path='/' component={MoviesList} />
-          <Route exact path='/:category' component={CategoriesListMovies} />
-          <Route exact path='/selection/:id' component={SelectedMovie} />
-        </Switch>
-      </Router>
-
-
-   
-
+      {  notificationMsg }
+      {/* <Search/> */}
+  
+        <Routes 
+         />
+ 
+      
     </div>
   );
 }
-
+ 
 export default App;

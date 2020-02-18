@@ -2,7 +2,7 @@ import React , {useContext, useState} from 'react';
 import {
   withRouter
 } from 'react-router-dom'
-import { MoviesContext } from "../store";
+import { MoviesContext } from "../store/movies";
 import { FaSearch} from "react-icons/fa";
 
  function Search(props) {

@@ -1,10 +1,10 @@
 import React , {useContext} from 'react';
 import { Link } from "react-router-dom";
-import { MoviesContext } from "../store";
+import { MoviesContext } from "../store/movies";
 
 export default function ListOfGenres(props) {
 
-  const {state , matchGenre } = useContext(MoviesContext);
+  const {sideDrawer, state , matchGenre } = useContext(MoviesContext);
   const { genres }= state;
 
   const genresInTheCatalog = genres && genres.filter( i =>  i.list && i.list.length > 0);
@@ -21,17 +21,17 @@ export default function ListOfGenres(props) {
   });
 
        let drawerCss= "list-genres";
-    if(props.sideDrawer){
+    if(sideDrawer){
       drawerCss="list-genres open";
     }
       
     return (
-        <section 
-        className={drawerCss}
+    <>
+        <ul className={drawerCss}
         >
-        <ul>
       { genres === undefined || genres.length === 0 ? "loading...." : displayGenres}
           </ul>  
-        </section>
+    </>
+       
     )
 }

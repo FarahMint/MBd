@@ -1,28 +1,34 @@
 import React, {useContext, useEffect}  from 'react'; 
 import { FaStar} from "react-icons/fa";
+import BtnAddBookmark from "./BtnAddBookmark";
 
 /**IMPORT CONTEXT */
-import { MoviesContext } from "../store";
+import { MoviesContext } from "../store/movies";
 
 
-// selectedMovieData
+
 export default function SelectedMovie(props) {
     const urlimg=`http://image.tmdb.org/t/p/w185/`;
 
     const id = props.match.params.id;
     const {state , selectedMovieData } = useContext(MoviesContext);
-    const {selected}  = state;
+    const {selected, bookmarked}  = state;
 
     const formatDate = selected && selected.release_date.slice(0,4)
    
- 
-    // const formatStringGenre  = selected && selected.genres.reduce((acc, curr) => {
-    //     let f = acc  + curr.name + ", ";
-     
-    //     return f;
-    // }, "");
-
     const formatStringGenre  = selected && selected.genres.map(item => item.name ).join(', ');
+
+    
+    const flagBmark = (selected)=>{
+        if(bookmarked.length > 0 && selected !== {}){
+
+       let tag = bookmarked.some(item => item.idDB === selected.id)
+       return tag;
+        }
+    };
+
+    // const flagBmark = bookmarked && bookmarked.length > 0 && bookmarked.some(item => item.idDB === selected.id);
+
     
     const timeConvert= (num) =>{
        
@@ -48,29 +54,22 @@ export default function SelectedMovie(props) {
 
             return `${dayNum} ${fullMonth} ${fullYear}`;
          }
-       
-       
          
     return (
         <section>
-
             { !selected || selected === undefined ?
-            <p>no selection </p>
-        :
-
-
-        <>
+            <p>no selection </p> :
+            <>
             <div className="title_wrapper">
                 <div>
-                <h3>{selected.title}</h3><span>({formatDate})</span>
-            <p>
-                <FaStar/>
-                {selected.vote_average}</p>
+                    <h3>{selected.title}</h3><span>({formatDate})</span>
+                    <p> <FaStar/>{selected.vote_average}</p>
                 </div>
             
-            <div>{timeConvert(selected.runtime)} | {formatStringGenre} |{dateFormatString(selected.release_date)}</div>
-            </div>
-            <br/>
+                <div>{timeConvert(selected.runtime)} | {formatStringGenre} |{dateFormatString(selected.release_date)}</div>
+                </div>
+                <br/>
+
               <div className="details">
                     <img
                 src={`${urlimg}${selected.poster_path}`}
@@ -78,27 +77,20 @@ export default function SelectedMovie(props) {
                 /> 
              
                 <div className="plot_summary">
-                <div className="plot_summary_wrapper">
+                
                     <div className="status-message">
                       <h4 className="status-message-heading">{selected.status}</h4>
+                        <BtnAddBookmark
+                         movie ={selected}
+                         flagBmark={flagBmark(selected)}/> 
                     </div>
-                </div>
-                <div className="plot_summary_wrapper">
-                    <div className="plot_summary ">
-                        <div className="summary_text">
+               
+                        <div className="plot_summary">
                             <h4>{selected.tagline}</h4> 
                             <p>{selected.overview}</p> 
-                        </div>
-                    </div> 
-                </div>  
-                <div className="uc-add-wl-button uc-add-wl--not-in-wl uc-add-wl">
-                <button>
-                    <div className="ipc-button__text">Add to Watchlist || Added to Watchlist
-                    </div>
-                </button>     
-            </div>  
-            </div>
-        </div> 
+                        </div>  
+                </div>
+            </div> 
         </>   
         }
      </section>

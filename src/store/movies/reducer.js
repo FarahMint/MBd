@@ -4,7 +4,11 @@ import {
     GET_GENRES_MOVIES,
     GET_QUERY,
     GET_MOVIES_GENRES_SELECTED,
+    ADD_BOOKMARK,
+    REMOVE_BOOKMARK,
     QUERY_INPUT,
+    GET_BOOKMARK,
+    GET_NOTIFICATION,
 } from "./types";
   
     
@@ -14,6 +18,8 @@ import {
     selected:{},
     genres:[],
     selectedGenres:[],
+    bookmarked:[],
+    notif:{ show:false}
   }
   
   function movieReducer(state = initState, action) {
@@ -40,6 +46,25 @@ import {
             ...state,
             selectedGenres: action.payload
           }
+        case  ADD_BOOKMARK:
+            // console.log("add b", action.payload)
+          return{
+            ...state,
+           
+          }
+        case  REMOVE_BOOKMARK:
+            // console.log("REMOVE b", action.payload);
+            const bookmarked =  state.bookmarked.filter(item => item.id !== action.payload)
+          return{
+            ...state,
+            bookmarked: bookmarked,
+          }
+        case  GET_BOOKMARK:
+          // console.log("get b", action.payload)
+          return{
+            ...state,
+            bookmarked: action.payload
+          }
   
         case GET_QUERY:
           return{
@@ -50,6 +75,11 @@ import {
             return {
                 ...state,
               query: action.payload
+            }
+          case  GET_NOTIFICATION:       
+            return {
+                ...state,
+                notif: action.payload
             }
       default:
         return state;

@@ -1,7 +1,7 @@
 import React , {useContext} from 'react';
 
 
-import { MoviesContext } from "../store";
+import { MoviesContext } from "../store/movies";
 
 import Movie from "./Movie";
 // import Alert from "./Alert";
