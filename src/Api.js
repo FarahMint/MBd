@@ -6,7 +6,7 @@ export const searchMovie =  async  searchTerm => {
   try{
     const response = await fetch(url);
     const  {results} = await response.json();
-    console.log(results);
+   
     return results;
   }catch(e){
     console.log(e);

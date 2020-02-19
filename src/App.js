@@ -2,7 +2,8 @@ import React , {useContext} from 'react';
 
 import Routes from "./routes"
 import Header from"./components/Header";
-// import Search from"./components/Search";
+import Footer from"./components/Footer";
+ 
 import Notification from"./components/Notification";
 
 /**IMPORT CONTEXT */
@@ -24,15 +25,16 @@ function App() {
   
   return (
     <div className="App">
-
+      <div className="content">
       <Header/>
       {  notificationMsg }
       {/* <Search/> */}
   
         <Routes 
          />
+      </div>
  
-      
+     <Footer/> 
     </div>
   );
 }

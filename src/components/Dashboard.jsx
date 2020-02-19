@@ -22,11 +22,14 @@ export default function Dashboard() {
    
     const user = state.user ? state.user : null;
 
+    const formatedName = user.slice(0,user.indexOf("@"));
+     
     return (
         
         <section className="dashboard-container">
         {/* {!state.isAuthenticated && <Redirect to="/login"/> } */}
-            <h1>dashboard</h1>
+        
+    <h3>welcome {formatedName}</h3>
         <p>you are logged in with {user }</p>
 
         <div className="moviesList-container">

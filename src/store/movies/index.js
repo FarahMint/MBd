@@ -104,12 +104,12 @@ const MoviesContextProvider =(props)=>{
 
       let matchToGenre = genres.genres.map(item =>{
 
-      let t = moviesList.filter(movie => 
+      let genresListing = moviesList.filter(movie => 
       movie.genre_ids.includes(item.id));
-      return {id:item.id ,name: item.name, list : t}
-      });
-      dispatch({type: GET_GENRES_MOVIES , payload: matchToGenre});
+      return {id:item.id ,name: item.name, list : genresListing}
+      }); 
 
+      dispatch({type: GET_GENRES_MOVIES , payload: matchToGenre});
       }catch(e){
        console.log(e)
       }
@@ -235,8 +235,8 @@ const MoviesContextProvider =(props)=>{
     return(
         <MoviesContext.Provider  value={{
           state,
-          dispatch,
           alert,
+          getData,
           selectedMovieData,
           userSearch,
           matchGenre ,

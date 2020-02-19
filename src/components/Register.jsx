@@ -41,6 +41,7 @@ function Register({history}) {
 			<label htmlFor="name">Name</label>
             <input 
             name="name" 
+            type="text"
             autoComplete="off" 
             autoFocus
             value={values.name} 
@@ -52,6 +53,7 @@ function Register({history}) {
 			<label htmlFor="email">Email Address</label>
             <input
             name="email" 
+            type="email"
             autoComplete="off"
             value={values.email} 
             onBlur={ handleBlur}
@@ -81,8 +83,7 @@ function Register({history}) {
             disabled={isSubmit}
 			onClick={onRegister}> Register
           	</button>
-            <Link to="/login">
-                <button>Go back to Login</button>
+            <Link to="/login">Go back to Login
             </Link>
 				
 		</form>

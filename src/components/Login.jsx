@@ -48,11 +48,11 @@ function Login({history}) {
                 placeholder="your email address"
                 onChange={ handleChange}
                 onBlur={ handleBlur}
-                className={errors.email && `error-input`}
                 />
-            { errors.email && <p className="error-text">{errors.email}</p>}
+             
+            { errors.email&&<p className="error-text">{errors.email}</p>  }
             
-            { firebaseErr && <p className="error-text">{firebaseErr}</p>}
+            { firebaseErr &&   <p className="error-text">{firebaseErr}</p>}
 
             <label htmlFor="password">Password</label>
                <input 
@@ -61,24 +61,21 @@ function Login({history}) {
                required
                 value={values.password || ""}
                 autoComplete="off"
-                placeholder="your password address"
+                placeholder="your password"
                 onChange={handleChange}
                 onBlur={ handleBlur}
-                className={errors.email && `error-input`}
                 />
                 
                 { errors.password && <p className="error-text">{errors.password}</p>}
                
-                { !state.isAuthenticated &&<p className="error-text">{state.msg}</p>}
+                { (!state.isAuthenticated && state.msg) && <p className="error-text">{state.msg}</p>}
                 
                 <button 
                 type="submit"
                 disabled={isSubmit}>
                     submit</button>
 
-        <Link to="/register">
-            <button>Go back to Register</button>
-        </Link>
+        <Link to="/register">Go back to Register</Link>
             </form> 
         </div>
     )

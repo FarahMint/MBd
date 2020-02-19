@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 /** ICONS */
 import {MdDashboard} from "react-icons/md";
-import {FaSignOutAlt, FaSignInAlt} from "react-icons/fa"
+import { FaUser ,FaSignOutAlt} from "react-icons/fa"
 
 /** COMPONENTS */
 import ToggleMenuSm from "./ToggleMenuSm";
@@ -30,7 +30,7 @@ export default function Header(props) {
     }
 
     const login =  <Link to="/login">
-    <button type="button"><FaSignInAlt aria-label="login" title="login"/></button> </Link>
+    <button type="button"><FaUser aria-label="login" title="login"/></button> </Link>
 
    
     const dashboard =  
@@ -55,26 +55,24 @@ export default function Header(props) {
 
     let nav = !state.isAuthenticated ? login  : dashboard;
   
-
+    
     return (
-        <header   
-        className="App-header">
-           
-            <Link to="/"><h1>M</h1></Link>
-                    <div className="nav-user-active">
-                        { nav}
-                    </div>
+        <header>
+           <div className="content">
+                <Link to="/"><h1>M</h1></Link>
+                <div className="nav-user-active">{ nav}</div>
                 <ToggleMenuSm 
-                sideDrawer={sideDrawer}
-                toggleNavHandler ={toggleNavHandler }/>
-           
+                    sideDrawer={sideDrawer}
+                    toggleNavHandler ={toggleNavHandler }/>
+           </div>
          
 
             <ListOfGenres
                 sideDrawer={sideDrawer}
                 toggleNavHandler ={toggleNavHandler} />
-
-            <Search/>
+            <div>
+             <Search/>
+            </div>
         </header>
     )
 }
