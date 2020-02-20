@@ -1,26 +1,27 @@
 # MBd Movie catalogue
+A movie recommendations web app built with React.js that fetches data from MovieDB API with search and filtering functionalities. It allows users to save selected movies into a watchlist after being authenticated. The backend is completed with Firebase authentication,  and  Firestore for the database. 
 
-Web app created with:
+## 🧐 Web stack:
 - React.js
 - React Context API for the state management
 - React-router
 - Data from MovieDB API  
 - LocalStorage
 - Firebase auth for register and login with email
-- Firestore as DB for signin user
+- Firestore as DB for login user
 - Firebase for Hosting
 
 
-## 🧐 What user can do?
-A user of 'Recipe Chef' can do the following:
-- [x] Browse the recent movies 
-- [x] Browse all the movies category available
-- [x] View all movies from a selected category
-- [x] View movie details
-- [x] Lookup a movie using text-based search
-- [x] Use MBd on their mobile device
-- [x] Firebase register and login
-- [x] Enable user to bookmarked movie after register or signin
+## 🧐 What can user do?
+A user of 'MBd Movie Catalogue' can do the following:
+- [x] Browse the recent movies.
+- [x] Browse all the movies category available.
+- [x] View all movies from a selected category.
+- [x] View movie details.
+- [x] Lookup a movie using text-based search.
+- [x] Use MBd on a mobile device.
+- [x] Firebase registration and login.
+- [x] Bookmarked movie after registering or signing in.
 - [x] Bookmarked selected movie (firestore)
 - [x] Remove previous bookmarked movie (firestore)
 
