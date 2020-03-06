@@ -1,5 +1,7 @@
 import React , {createContext, useReducer, useEffect} from 'react';
 
+ 
+
 import {LOGIN_REQUEST,  LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT_REQUEST, LOGOUT_SUCCESS, LOGOUT_FAILURE } from "./types";
 
 import firebase from "../../firebaseDB/firebase";
@@ -53,8 +55,10 @@ const AuthContextProvider=(props) =>{
       
      /**LOGOUT */
     const onLogout = async() => {
+      
     dispatch({type: LOGOUT_REQUEST});
         try{
+       
             await auth.signOut();
             dispatch({
                 type: LOGOUT_SUCCESS

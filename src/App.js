@@ -1,9 +1,12 @@
-import React , {useContext} from 'react';
+import React  , {useContext} 
+from 'react';
 
 import Routes from "./routes"
 import Header from"./components/Header";
-import Footer from"./components/Footer";
+import Navbar from"./components/Navbar";
  
+
+//import TestSlider from "./components/TestSlider"
 import Notification from"./components/Notification";
 
 /**IMPORT CONTEXT */
@@ -25,16 +28,15 @@ function App() {
   
   return (
     <div className="App">
-      <div className="content">
       <Header/>
+      <Navbar/>
+      <div className="content">
+
       {  notificationMsg }
-      {/* <Search/> */}
-  
+   
         <Routes 
          />
-      </div>
- 
-     <Footer/> 
+      </div>    
     </div>
   );
 }

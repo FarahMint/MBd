@@ -25,6 +25,7 @@ import {
   function movieReducer(state = initState, action) {
     switch (action.type) {
       case GET_ALL_MOVIES:
+      
         return{
           ...state,
           moviesList: action.payload
@@ -36,12 +37,12 @@ import {
             selected: action.payload
           }
         case GET_GENRES_MOVIES:
+        
           return{
             ...state,
             genres: action.payload
           }
         case GET_MOVIES_GENRES_SELECTED:
-            // console.log(action.payload)
           return{
             ...state,
             selectedGenres: action.payload

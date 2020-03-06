@@ -1,14 +1,10 @@
 import React, {useContext} from 'react';
 
 /** ROUTER */
-import { Link
-    // , Redirect
- } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { FaTrash} from "react-icons/fa";
 
-/** COMPONENTS */
-// import Movie from "./Movie";
 
 /** CONTEXT */
 import {Auth} from "../store/auth";
@@ -23,13 +19,17 @@ export default function Dashboard() {
     const user = state.user ? state.user : null;
 
     const formatedName = user.slice(0,user.indexOf("@"));
-     
+    
+    const shorten=(str,  separator = ' ')=>{
+        let maxLen= 14;
+        if (!str || str.length <= maxLen) return str;
+        return str.substr(0, str.lastIndexOf(separator, maxLen));
+      }
+
     return (
         
-        <section className="dashboard-container">
-        {/* {!state.isAuthenticated && <Redirect to="/login"/> } */}
-        
-    <h3>welcome {formatedName}</h3>
+    <section className="dashboard-container">    
+        <h3>welcome {formatedName}</h3>
         <p>you are logged in with {user }</p>
 
         <div className="moviesList-container">
@@ -38,21 +38,19 @@ export default function Dashboard() {
                 <img src={movie.img} alt={movie.title}/>
                 <Link 
                 to={`/selection/${movie.idDB}`} className="btn-primary movie-link">
-                <h3>{movie.title}</h3>
+                <h3>{shorten(movie.title)}</h3>
                 </Link>
 
                 <button 
                 onClick={()=>removeBookmarkedMovie(movie.id)}
                 className="icon-remove">
-                    <FaTrash
-                   
-                     arial-label="remove bookmark"
+                    <FaTrash arial-label="remove bookmark"
                      title="remove bookmark"/>
-                    </button>
+                </button>
             </div>
         ))}
        
         </div>
-        </section>
+    </section>
     )
 }

@@ -9,7 +9,7 @@ import Movie from "./Movie";
 export default function CategoriesListMovies(props) {
     const {state } = useContext(MoviesContext);
     const {  selectedGenres }= state
- 
+
     return (
         <section className="moviesList-container">
         {

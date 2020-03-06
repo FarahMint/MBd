@@ -65,7 +65,10 @@ export default function ListOfGenres(props) {
          
           <h3 
           className="dd-header-title"
-          onClick={() => toggleList()}> Categories
+          onClick={() => toggleList()}> 
+              <Link  to="/categories">
+          Categories
+        </Link>
             {isOpen
               ? <FaAngleUp/>
               : <FaAngleDown/>

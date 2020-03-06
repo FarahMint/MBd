@@ -4,6 +4,7 @@ import { Switch, Route} from 'react-router-dom';
 /** COMPONENTS */
 import MoviesList from '../components/MoviesList';
 import CategoriesListMovies from "../components/CategoriesListMovies";
+import Categories from "../components/Categories";
  import SelectedMovie from "../components/SelectedMovie";
  import Login from "../components/Login";
  import Register from "../components/Register";
@@ -32,6 +33,7 @@ return (
             isAuthenticated={isAuthenticated}
             />
        
+          <Route exact path='/categories' component={Categories} />
           <Route exact path='/:category' component={CategoriesListMovies} />
           <Route exact path='/selection/:id' component={SelectedMovie} />
         </Switch>
